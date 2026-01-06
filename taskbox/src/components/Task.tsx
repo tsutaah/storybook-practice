@@ -13,7 +13,11 @@ export default function Task({
 }: TaskProps) {
   return (
     <div className={`list-item ${state}`}>
-      <label htmlFor={`archiveTask-${id}`} aria-label={`archiveTask-${id}`} className="checkbox">
+      <label
+        htmlFor={`archiveTask-${id}`}
+        aria-label={`archiveTask-${id}`}
+        className="checkbox"
+      >
         <input
           type="checkbox"
           disabled={true}
@@ -21,6 +25,7 @@ export default function Task({
           id={`archiveTask-${id}`}
           checked={state === "TASK_ARCHIVED"}
         />
+        <span className="checkbox-custom" onClick={() => onArchiveTask(id)} />
       </label>
 
       <label htmlFor={`title-${id}`} aria-label={title} className="title">
