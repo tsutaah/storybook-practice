@@ -1,10 +1,14 @@
-import type { TaskData } from "../types";
+import type { TaskData } from '../types';
 
 type TaskProps = {
+  /** Composition of the task */
   task: TaskData;
+  /** Event to change the task to archived */
   onArchiveTask: (id: string) => void;
+  /** Event to change the task to pinned */
   onPinTask: (id: string) => void;
 };
+
 
 export default function Task({
   task: { id, title, state },
@@ -36,6 +40,7 @@ export default function Task({
           name="title"
           id={`title-${id}`}
           placeholder="Input title"
+         style={{ backgroundColor: 'red' }}
         />
       </label>
       {state !== "TASK_ARCHIVED" && (
